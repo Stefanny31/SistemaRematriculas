@@ -17,7 +17,7 @@ import java.sql.ResultSet;
  *
  * @author stefanny.0181
  */
-public class DaoUsuarioResponsavel extends BancoDeDadosMySql{
+public class DaoPessoa extends BancoDeDadosMySql{
     String sql;
     
     public Boolean inserir(int id, int idEndereco, int idEstadoCivil, String nome, String sobrenome, String genero, String telefone, String email, String usuario, String senha){
