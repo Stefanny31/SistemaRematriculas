@@ -15,5 +15,6 @@ public class DadosTemporarios {
     //Informações da sessão do usuário
     public static int idUsuarioLogado;
     public static String usuarioLogado;
+    public static Object tempObject;
     
 }
