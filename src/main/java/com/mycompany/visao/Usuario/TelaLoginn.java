@@ -4,6 +4,8 @@
  */
 package com.mycompany.visao.Usuario;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author stefanny.0181
@@ -42,10 +44,11 @@ public class TelaLoginn extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tfEmail1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        pfsenha1 = new javax.swing.JPasswordField();
+        pfSenha1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("System - Login");
+        setTitle(" Login");
+        setResizable(false);
 
         jLabel1.setText("Email :");
 
@@ -54,6 +57,11 @@ public class TelaLoginn extends javax.swing.JFrame {
         btnEntrar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(0, 0, 153));
         btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Nome :");
 
@@ -102,7 +110,7 @@ public class TelaLoginn extends javax.swing.JFrame {
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(pfsenha1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                                    .addComponent(pfSenha1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
                                     .addComponent(tfEmail1)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(49, 49, 49)
@@ -163,11 +171,11 @@ public class TelaLoginn extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
-                    .addComponent(tfEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(pfsenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pfSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(btnEntrar)
                 .addGap(67, 67, 67)
@@ -176,8 +184,21 @@ public class TelaLoginn extends javax.swing.JFrame {
             .addComponent(jSeparator3)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(625, 362));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        if(tfEmail1.getText().equals("Marcos") || String.valueOf
+        (pfSenha1.getPassword()).equals("12345")){
+        TelaMenuOpcoes tela = new TelaMenuOpcoes();
+                       tela.setVisible(true);
+        dispose();   
+    }
+    else{
+        JOptionPane.showMessageDialog(rootPane, " Acesso Negado ! ");
+    }
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,8 +249,8 @@ public class TelaLoginn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JPasswordField pfSenha1;
     private javax.swing.JPasswordField pfSenha2;
-    private javax.swing.JPasswordField pfsenha1;
     private javax.swing.JTextField tfEmail1;
     private javax.swing.JTextField tfEmail2;
     private javax.swing.JTextField tfNome;
